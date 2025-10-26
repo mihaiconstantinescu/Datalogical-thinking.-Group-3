@@ -19,7 +19,7 @@ ENDWHILE
 #Display for user whether a book is popular or not. Will display message if it exceeds a certain threshold or goes below another
 WHILE (index<length of book_data)
   IF Total_loans exceed 30 print "this book is popular, give it a try!"
-  IF Total_loans fall below 5 print "This book could use some attention."
+  ELSE Total_loans fall below 5 print "This book could use some attention."
   ENDIF
 #Display for user and find popular books within subset
 WHILE (index<length of book_data)
@@ -28,3 +28,4 @@ in Bookdata_array[index]
   ENDIF
 
 #
+
