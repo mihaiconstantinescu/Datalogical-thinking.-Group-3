@@ -1,0 +1,4 @@
+#Read game data from Bookdata.csv
+Read in array av values from "Bookdata.csv"
+Set data_data to array of values
+
