@@ -1,3 +1,30 @@
-#Read game data from Bookdata.csv
+#Read book data from Bookdata.csv
 Read in array av values from "Bookdata.csv"
-Set data_data to array of values
+Set Bookdata to array of values
+
+#Clean data. Data has been cleaned with planned algorithm in mind and contain only valid data. 
+
+#Display for user find books based on book title
+WHILE (index < length of Bookdata) 
+Read string from Title_array[index]
+Set result list of matching Bookdata[index]
+ENDWHILE
+
+#Display for user find books based on author name
+WHILE (index < length of Bookdata) 
+Read string from Author_array[index]
+Set result list of matching Bookdata[index]
+ENDWHILE
+
+#Display for user whether a book is popular or not. Will display message if it exceeds a certain threshold or goes below another
+WHILE (index<length of book_data)
+  IF Total_loans exceed 30 print "this book is popular, give it a try!"
+  IF Total_loans fall below 5 print "This book could use some attention."
+  ENDIF
+#Display for user and find popular books within subset
+WHILE (index<length of book_data)
+  IF Total loans_array exceed 30, print "this book is popular in your chosen genre!"
+in Bookdata_array[index]
+  ENDIF
+
+#
