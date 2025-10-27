@@ -1,44 +1,51 @@
 #Read book data from Bookdata.csv
-Read in array av values from "Bookdata.csv"
+Read in array of values from "Bookdata.csv"
 Set Bookdata to array of values
-
+SET index to 0
 #Clean data. Data has been cleaned with planned algorithm in mind and contain only valid data. 
-Set index to 0
 
-#Display for user find books based on book title
-//missing input from user
-//missing defining Title_array
-//missing IF statement that checks input against list
+#Find books based on book title
+WRITE "Enter the booktitle you would like to find"
+READ input 
+SET index to 0
+SET title_array to empty array #contains matching books
 WHILE (index < length of Bookdata) 
-  Read string from Title_array[index]
-  Set result list of matching Bookdata[index]
+  IF (bookdata[index].title matches input) #only exact matches here
+    ADD Bookdata[index] to title_array
+  Set index to index + 1
 ENDWHILE
+print title_array
 
-#Display for user find books based on author name
-//missing input from user
-//missing defining Author_array
-//missing IF statement that checks input against list
+#Find books based on author name
+WRITE "Enter the author you would like to find"
+READ input 
+SET index to 0
+SET Author_array to empty array #contains matching author
 WHILE (index < length of Bookdata) 
-  Read string from Author_array[index]
-  Set result list of matching Bookdata[index]
-ENDWHILE
+IF (Bookdata[index].author contains input) #partial matches allowed
+    ADD Bookdata[index] to Author_array
+  Set index to index + 1
+ENDWHILE 
+print Author_array
 
 #Display for user whether a book is popular or not. Will display message if it exceeds a certain threshold or goes below another
-// missing definition of index, might already be at end, so needs to be set to 0
-// corrected book_data to bookdata to match first array
-// missing defining total_loans array, set to empty
-// removed last IF since it doesn't have a condition but is what happened when other conditions are not met.
-WHILE (index<length of Bookdata)
-  IF (Total_loans exceed 30) 
-      print "this book is popular, give it a try!"
-    ELSE IF (Total_loans fall below 5)
-      print "This book could use some attention."
-    ELSE print "This book is average"
-  ENDIF
+WRITE "Enter the exact booktitle of book you want to check the popularity of?"
+READ input
+*RUN title search function above #row 11-16, so no print but has to empty array first
+SET index to 0
+
+WHILE (index<length of Title_array)
+  IF (Title_array[index].Total_loans exceed 30) 
+          print "This book is popular, give it a try!"
+          ELSE IF (Title_array[index].Total_loans fall below 5)
+          print "This book could use some attention."
+          ELSE print "This book is average"
+    ENDIF
+  Set index to index + 1
 ENDWHILE
 
 #Display for user and find popular books within subset
-// missing definition of index
+// THIS IS WHERE I'M UP TO. missing definition of index
 // something about the arrays, maybe cannot use the previous ones since that would require them loading first, think a bit about this
 // missing the "shelf-code" connection, it's only checking which books have more than 30 loans. 
 WHILE (index<length of Bookdata)
@@ -64,19 +71,3 @@ ENDWHILE
 
 sort shelf_loans_array in decreasing order based on shelf_total
 WRITE top ten items in shelf_loans_array
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#max
