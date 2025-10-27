@@ -6,54 +6,63 @@ Set Bookdata to array of values
 Set index to 0
 
 #Display for user find books based on book title
+//missing input from user
+//missing defining Title_array
+//missing IF statement that checks input against list
 WHILE (index < length of Bookdata) 
-Read string from Title_array[index]
-Set result list of matching Bookdata[index]
+  Read string from Title_array[index]
+  Set result list of matching Bookdata[index]
 ENDWHILE
 
 #Display for user find books based on author name
+//missing input from user
+//missing defining Author_array
+//missing IF statement that checks input against list
 WHILE (index < length of Bookdata) 
   Read string from Author_array[index]
   Set result list of matching Bookdata[index]
 ENDWHILE
 
 #Display for user whether a book is popular or not. Will display message if it exceeds a certain threshold or goes below another
-WHILE (index<length of book_data)
+// missing definition of index, might already be at end, so needs to be set to 0
+// corrected book_data to bookdata to match first array
+// missing defining total_loans array, set to empty
+// removed last IF since it doesn't have a condition but is what happened when other conditions are not met.
+WHILE (index<length of Bookdata)
   IF (Total_loans exceed 30) 
       print "this book is popular, give it a try!"
     ELSE IF (Total_loans fall below 5)
       print "This book could use some attention."
-    ELSE IF print "This book is average" #What happens if none of the above is true.
+    ELSE print "This book is average"
   ENDIF
 ENDWHILE
 
 #Display for user and find popular books within subset
-WHILE (index<length of book_data)
+// missing definition of index
+// something about the arrays, maybe cannot use the previous ones since that would require them loading first, think a bit about this
+// missing the "shelf-code" connection, it's only checking which books have more than 30 loans. 
+WHILE (index<length of Bookdata)
   IF (Total loans_array exceed 30), 
       print "this book is popular in your chosen genre!"
 in Bookdata_array[index]
+// I'm not sure what this bit is meant to do, will think.
   ENDIF
 
 #Display for user a sorted list of most popular shelf codes
   Set shelf_loans_array to empty array
   Set catind to 0
-Set shelf_total to shelf_total + object.total
 
-#this code makes a list that contains the summarized loans per shelf code
 WHILE (catind < length of Bookdata)
     Read shelf_code, total_loans from Bookdata[catind]
-
-#this code creates a new shelf code listing if it's not already in the array
-IF shelf_code not in shelf_loans_array
-    Read new shelf_total with shelf_code, total_loans, count = 1 
-#double check naming of variables above
-    ELSE
-        Read existing shelf_stat: add rating, add growth, increment count
-    ENDIF
-    Set index to catind + 1
+      IF shelf_code not in shelf_loans_array
+        Read new shelf_total with shelf_code, total_loans, count = 1 
+      ELSE
+        Read existing shelf_total: add total_loans, increment count
+      ENDIF
+    Set catind to catind + 1
 ENDWHILE
 
-sort list
+sort shelf_loans_array in decreasing order based on shelf_total
 WRITE top ten items in shelf_loans_array
 
 
