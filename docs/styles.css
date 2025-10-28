@@ -134,7 +134,7 @@ footer a:hover {
 }
 
 /* Responsive layout */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   section {
     -webkit-flex-direction: column;
     flex-direction: column;
