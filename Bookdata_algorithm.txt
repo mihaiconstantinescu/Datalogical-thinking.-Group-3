@@ -2,29 +2,36 @@
 Read in array of values from "Bookdata.csv"
 Set Bookdata to array of values
 #Clean data. Data has been cleaned with planned algorithm in mind and contain only valid data. 
-#Find books based on book title
+
+#Display for user and find books based on book title
 WRITE "Enter the booktitle you would like to find"
 READ input 
 SET index to 0
 SET Title_array to empty array #contains matching books
   WHILE (index < length of Bookdata) #FUNCTION START HERE
-    IF (Bookdata[index].title matches input) #only exact matches here
+    IF (Bookdata[index].title contains input) 
       ADD Bookdata[index] to Title_array
     Set index to index + 1
   ENDWHILE #FUNCTION END HERE
-print Title_array
+  IF Title_array contains data
+    print Title_array
+  ELSE
+    print "No matches"
 
-#Find books based on author name
+#Display for user and find books based on author name
 WRITE "Enter the author you would like to find"
 READ input 
 SET index to 0
 SET Author_array to empty array #contains matching author
   WHILE (index < length of Bookdata) 
-  IF (Bookdata[index].author contains input) #partial matches allowed
+  IF (Bookdata[index].authorLast OR Bookdata[index].authorFirst contains input) #partial matches allowed
       ADD Bookdata[index] to Author_array
     Set index to index + 1
   ENDWHILE 
-print Author_array
+    IF Author_array contains data
+    print Author_array
+  ELSE
+    print "No matches"
 
 #Display for user whether a book is popular or not. Will display message if it exceeds a certain threshold or goes below another
 WRITE "Enter the exact booktitle of book you want to check the popularity of?"
@@ -49,28 +56,28 @@ READ input
 SET index to 0
 SET loans_array to empty array
   WHILE (index<length of Bookdata)
-    IF (Bookdata[index].shelf_code matches input) AND (Bookdata[index].Total_loans exceed 30) 
+    IF (Bookdata[index].shelf_code matches input) AND (Bookdata[index].Total_loans exceed 30) #we have decided a book that's loaned more than 30 times is popular
         ADD Bookdata[index] to loans_array
     ENDIF
     SET index to index + 1
   ENDWHILE
-print "these books have more than 30 loans:"
-print loans_array
+  IF loans_array contains data
+    print loans_array
+  ELSE
+    print "No results"
 
 #Display for user a sorted list of most popular shelf codes based on total loans
 SET shelf_loans_array to empty array
-SET catind to 0
-  WHILE (catind < length of Bookdata)
-      READ shelf_code, total_loans from Bookdata[catind]
+SET index to 0
+  WHILE (index < length of Bookdata)
+      READ shelf_code, total_loans from Bookdata[index]
         IF shelf_code not in shelf_loans_array
           ADD new shelf_total with shelf_code, total_loans, count = 1 
         ELSE
           ADD to existing shelf_total: add total_loans, increment count
         ENDIF
-      SET catind to catind + 1
+      SET index to index + 1
   ENDWHILE
 sort shelf_loans_array in decreasing order based on shelf_total
 print "these are the top ten shelf codes in terms of total loans:" 
 print top ten shelf codes in shelf_loans_array
-
-#in general, do we want to add "no results found" in places?
