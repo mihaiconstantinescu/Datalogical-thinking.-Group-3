@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  max-width:95%;
+  max-width:1500px;
   margin: 0 auto;
 }
 
@@ -92,6 +92,10 @@ h2 {
 
 h3 {
   font-family:Georgia, 'Times New Roman', Times, serif; 
+}
+
+img {
+  padding:5px;
 }
 
 img.groupmember {

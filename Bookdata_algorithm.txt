@@ -19,7 +19,7 @@ SET Title_array to empty array #contains matching books
     print "No matches"
 
 #Display for user and find books based on author name
-WRITE "Enter the author you would like to find"
+WRITE "Enter the author whose books you would like to find"
 READ input 
 SET index to 0
 SET Author_array to empty array #contains matching author
