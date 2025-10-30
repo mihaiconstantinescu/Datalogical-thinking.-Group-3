@@ -7,9 +7,12 @@
 <link rel="stylesheet" href="styles.css" />
 <html>
   <head>
-    <title>Group 3 Algoritm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="vibes" rel="stylesheet" href="styles.css" />
+    <title>Pumpkin gang (group 3)</title>
   </head>
   <body>
+    <div class="stem"></div>
     <div class="container">
       <header>
         <h1>People</h1>
@@ -23,7 +26,7 @@
         </ul>
       </nav>
       <section>
-        <article>
+        <article id="people1">
           <h2>So who did what?</h2>
           <p>
             While most of the work in this process was done collaboratively,
@@ -87,15 +90,28 @@
           </p>
         </article>
       </section>
-              <article>
+              <article id="people2">
           <p>
             Because none of us had previous experience related to the assignment, we chose areas randomly, where each person was responsible for making sure that tasks in their area was planned and executed. As previously mentioned, we have all worked on all parts of the assignment.
           </p>
         </article>
       <footer>
+        <button onclick="toggleVibes()">Toggle pumpkin mode</button>
         <p>Group 3 Algoritm</p>
+        <p>
           <a href="https://www.flaticon.com/free-icons/pumpkin" title="pumpkin icons">Pumpkin icons created by Iconic Artisan - Flaticon</a>
+        </p>
       </footer>
     </div>
+        <script>
+      function toggleVibes() {
+        let vibes = document.getElementById('vibes');
+        if (vibes.getAttribute('href') === 'styles.css') {
+          vibes.setAttribute('href', 'pumkinstyles.css');
+        } else {
+          vibes.setAttribute('href', 'styles.css');
+        }
+      }
+    </script>
   </body>
 </html>

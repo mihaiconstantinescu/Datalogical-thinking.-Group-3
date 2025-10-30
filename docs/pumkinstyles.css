@@ -1,0 +1,170 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 1em 0 0 0;
+  background-color: #000;
+  cursor: url("img/bats001.png"), auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stem {
+  background: #228b22;
+  border-radius: 5em 0 3em 0;
+  height: 5em;
+  width: 3em;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #eb9636;
+  border-radius: 16em 16em 0 0;
+  padding: 0.2em 1em 0.2em 1em;
+  height:140px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  background: #eb7736;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: larger;
+}
+
+nav ul li {
+  float: left;
+  padding: 0em 1em;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.sidebar {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #eb9636;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em;
+}
+
+.sidebar a {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+border-radius: 0;
+  background-color: #f1f1f1;
+  padding: 1em 2em;
+}
+
+article h2 {
+  text-align: center;
+}
+
+article#people1{
+ border-radius: 0;
+}
+article#people2{
+ border-radius: 0;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: larger;
+  color: #228b22;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+img {
+  padding: 5px;
+}
+
+img.groupmember {
+  max-width: 30%;
+  height: auto;
+  object-fit: contain;
+}
+
+img.groupmember:hover {
+  max-width:35%;
+}
+
+img.memberPresentation {
+  max-width: 30%;
+  float: left;
+}
+
+.code {
+  background: #000;
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
+  margin: 0px;
+  padding: 2em;
+}
+
+footer {
+  background-color: #eb7736;
+  height: 140px;
+  border-radius: 0 0 16em 16em;
+  padding: 10px;
+  text-align: center;
+  color: #ffae00;
+}
+
+footer a {
+  color: #ffae00;
+  text-decoration: none;
+  font-style: italic;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}

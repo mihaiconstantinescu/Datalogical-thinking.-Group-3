@@ -1,15 +1,16 @@
 body {
   font-family:Verdana, Geneva, Tahoma, sans-serif; 
   margin: 1em 0 0 0;
+  background-color: #486a8f;
 }
 
 .container {
-  max-width:1500px;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 header {
-  background-color: #EB9636;
+  background-color: #486a8f;
   padding: 0.2em 1em 0.2em 1em;
   text-align: center;
   font-size: 35px;
@@ -22,7 +23,7 @@ section {
 }
 
 nav {
-  background: #EB7736;
+  background: #486a8f;
   display:flex;
   flex-direction:column;
   justify-content: center;
@@ -56,7 +57,7 @@ nav ul li:hover {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background: #EB9636;
+  background: #486a8f;
   display:flex;
   flex-direction:column;
   justify-content: flex-start;
@@ -73,8 +74,28 @@ article {
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
+  border-radius: 5em 0 5em 0;
   background-color: #f1f1f1;
   padding:1em 2em;
+}
+
+article#people1{
+ border-radius: 5em 0 0 0;
+}
+article#bjorn{
+ border-radius: 0;
+}
+article#emma{
+ border-radius: 0;
+}
+article#mihai{
+ border-radius: 0;
+}
+article#sofia{
+ border-radius: 0;
+}
+article#people2{
+ border-radius: 0 0 5em 0;
 }
 
 article h2 {
@@ -99,12 +120,13 @@ img {
 }
 
 img.groupmember {
-  width: 30%;
-  height:auto;
+  max-width: 30%;
+  height: auto;
+  object-fit: contain;
 }
 
 img.groupmember:hover {
-  width:35%;
+  max-width:35%;
 }
 
 img.memberPresentation {
@@ -121,7 +143,7 @@ img.memberPresentation {
 }
 
 footer {
-  background-color: #EB7736;
+  background-color: #486a8f;
   padding: 10px;
   text-align: center;
   color: white;

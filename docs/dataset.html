@@ -3,9 +3,12 @@
 <link rel="stylesheet" href="styles.css" />
 <html>
   <head>
-    <title>Group 3 Algoritm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="vibes" rel="stylesheet" href="styles.css" />
+    <title>Pumpkin gang (group 3)</title>
   </head>
   <body>
+    <div class="stem"></div>
     <div class="container">
       <header>
         <h1>Dataset</h1>
@@ -13,12 +16,13 @@
       <nav>
         <ul>
           <li><a href="index.html">Start</a></li>
-          <li><a href="algoritm.html">Algoritm</a></li>
+          <li><a href="algoritm.html">Algorithm</a></li>
           <li><a href="dataset.html">Dataset</a></li>
           <li><a href="people.html">People</a></li>
         </ul>
       </nav>
       <section>
+        <div class="sidebar"></div>
         <article>
           <h2>How the data was generated/curated/cleaned </h2>
           <p>
@@ -52,7 +56,7 @@
           </p>
         </article>
         <div class="sidebar">
-          <h3>Members of the project</h3>
+          <h3>Project members</h3>
           <a href="people.html#bjorn" alt="läs mer om Björn här"
             ><img
               class="groupmember"
@@ -85,11 +89,23 @@
       </section>
 
       <footer>
-        <p>Group 3 Algoritm</p>
+        <button onclick="toggleVibes()">Toggle pumpkin mode</button>
+
+        <p>Group 3 Algorithm</p>
         <p>
           <a href="https://www.flaticon.com/free-icons/pumpkin" title="pumpkin icons">Pumpkin icons created by Iconic Artisan - Flaticon</a>
         </p>
       </footer>
     </div>
+        <script>
+      function toggleVibes() {
+        let vibes = document.getElementById('vibes');
+        if (vibes.getAttribute('href') === 'styles.css') {
+          vibes.setAttribute('href', 'pumkinstyles.css');
+        } else {
+          vibes.setAttribute('href', 'styles.css');
+        }
+      }
+    </script>
   </body>
 </html>
